@@ -6,14 +6,21 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface Login {
+interface Requests {
 
     @FormUrlEncoded
     @POST("create/")
-    fun createUser(
+    fun apiUserCreate(
       @Field(encoded = false, value = "email") email:String,
       @Field("name") name:String,
       @Field("password") password:String
+    ): Call<Model>
+
+    @FormUrlEncoded
+    @POST("token/")
+    fun getToken(
+        @Field(encoded = false, value = "email") email:String,
+        @Field("password") password:String
     ): Call<Model>
 
 

@@ -15,6 +15,19 @@ class Model {
     @Expose
     var name: String? = null
 
+
+    @SerializedName("token")
+    @Expose
+    private var token: String? = null
+
+    fun getToken(): String? {
+        return token
+    }
+
+    fun setToken(token: String) {
+        this.token = token
+    }
+
 }
 
 
