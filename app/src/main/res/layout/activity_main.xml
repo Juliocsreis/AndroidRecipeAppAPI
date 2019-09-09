@@ -9,62 +9,92 @@
 
     <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical"
-                        android:layout_gravity="center"
-        >
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
             <TextView
-                    android:text="Recipe APP API"
+                    android:id="@+id/tvTitulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvTitulo" android:textSize="30sp"
-                    android:layout_marginTop="16dp" android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp" android:layout_gravity="center"/>
-            <TextView
-                    android:text="Faça seu cadastro abaixo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvCadastro"
+                    android:layout_gravity="center"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp" android:layout_marginTop="32dp"
-                    android:layout_gravity="center"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:ems="10"
-                    android:id="@+id/etEmail"
-                    android:hint="Insira seu e-mail" android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="32dp" android:layout_gravity="center"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/etNome"
-                    android:hint="Insira seu nome" android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="32dp" android:layout_gravity="center"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:ems="10"
-                    android:id="@+id/etPassword"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp" android:layout_marginTop="32dp"
-                    android:hint="Insira sua senha" android:layout_gravity="center"/>
-            <Button
-                    android:text="Cadastrar"
+                    android:text="Recipe APP API"
+                    android:textSize="30sp" />
+
+            <TextView
+                    android:id="@+id/tvCadastro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/buPost" android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp" android:layout_marginTop="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Faça seu cadastro abaixo" />
+
+            <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:hint="Insira seu e-mail"
+                    android:inputType="textEmailAddress" />
+
+            <EditText
+                    android:id="@+id/etNome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:hint="Insira seu nome"
+                    android:inputType="textPersonName" />
+
+            <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:hint="Insira sua senha"
+                    android:inputType="textPassword" />
+
+            <Button
+                    android:id="@+id/buPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="32dp"
-                    android:layout_gravity="center"/>
+                    android:text="Cadastrar" />
+
+            <Button
+                    android:id="@+id/buLogar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:text="Logar apos cadastro" />
         </LinearLayout>
     </ScrollView>
 

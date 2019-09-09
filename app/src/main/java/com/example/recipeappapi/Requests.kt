@@ -1,10 +1,9 @@
 package com.example.recipeappapi
 
+import com.example.recipeappapi.MainActivity.Companion.token
+import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface Requests {
 
@@ -18,10 +17,15 @@ interface Requests {
 
     @FormUrlEncoded
     @POST("token/")
-    fun getToken(
+    fun getTokenCode(
         @Field(encoded = false, value = "email") email:String,
         @Field("password") password:String
-    ): Call<Model>
+    ): Call<ResponseBody>
+
+
+
+    @GET("me/")
+    fun mePage(): Call<ResponseBody>
 
 
 }
