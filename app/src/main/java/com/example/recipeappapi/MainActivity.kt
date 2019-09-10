@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             getData()
         }
 
+
     }
 
 
@@ -27,10 +28,11 @@ class MainActivity : AppCompatActivity() {
 
     //Retrofit Utilities
     companion object{
-        var meUser: String?=null
         var token: String= ""
+        var REQUEST_CODE = 1}
 
-    }
+
+
 
     val retrofitClient =
         RetrofitInitializer.getRetrofitInstance()
@@ -108,13 +110,15 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.code() == 200) {
                     Toast.makeText(baseContext, "Fazendo Login", Toast.LENGTH_SHORT).show()
-                    meUser = response.body()!!.string()
+                    val meUser = response.body()!!.string()
                     Log.e("Token Gerado", meUser)
                     //{"email":"meAmo@gmail.com","name":"José"}
-                    val intent =
-                        Intent(this@MainActivity, User_Token_Access::class.java)
-                    intent.putExtra("dados", meUser)
-                    startActivity(intent)
+                    var intent= Intent(this@MainActivity,User_Token_Access::class.java)
+                    intent.putExtra("dados",meUser)
+                    startActivityForResult(intent, REQUEST_CODE)
+                    Log.e("INTENT", meUser)
+                    Log.e("INTENT2", intent.toString())
+                    Log.e("INTENT3", intent.getStringExtra("dados"))
 
             }else {
                     var res = response.code().toString()

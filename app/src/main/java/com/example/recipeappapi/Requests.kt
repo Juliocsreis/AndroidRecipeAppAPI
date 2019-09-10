@@ -1,6 +1,6 @@
 package com.example.recipeappapi
 
-import com.example.recipeappapi.MainActivity.Companion.token
+
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -26,6 +26,11 @@ interface Requests {
 
     @GET("me/")
     fun mePage(): Call<ResponseBody>
+
+    @PATCH("me/")
+    fun alterarNome(
+        @Field("name") name: String
+    ):Call<ResponseBody>
 
 
 }

@@ -22,6 +22,25 @@
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
+        <TextView
+                android:id="@+id/tvAlterarDados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="36dp"
+                android:text="Se quiser você pode alterar seu nome Abaixo"
+                android:textAlignment="center" />
+
+        <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="48dp"
+                android:paddingBottom="48dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
         <EditText
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
@@ -32,15 +51,11 @@
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
-        <EditText
-                android:id="@+id/tvEmail"
+        <Button
+                android:id="@+id/buAlterarDados"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="48dp"
-                android:text="TextView"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:text="Alterar Dados" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
