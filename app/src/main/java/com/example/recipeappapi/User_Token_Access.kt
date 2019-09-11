@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import com.example.recipeappapi.MainActivity.Companion.REQUEST_CODE
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,31 +15,42 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class User_Token_Access : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user__token__access)
 
+       var intent = intent
+
+        var simples = intent.getStringExtra("simples")
+
+//        var userName = intent.getStringExtra("dados").substringAfter("name\":")
+//                .replace("\"", "")
+//                .replace("}", "")
+        val nameEt = findViewById<TextView>(R.id.etNome)
+        nameEt.text = simples
+
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode== REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            var dadosUsuario = intent.extras.get("dados") as String
-            var nomeUser = dadosUsuario.substringAfter("name\":")
-                .replace("\"", "")
-                .replace("}", "")
-
-            val emailUser = dadosUsuario.substringAfter("email\":")
-                .substringBefore(",")
-                .replace("\"", "")
-            etEmail.setText(emailUser)
-            Log.v("Email USer", emailUser)
-
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if(requestCode== REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+//            var dadosUsuario = intent.extras.get("dados") as String
+//            var nomeUser = dadosUsuario.substringAfter("name\":")
+//                .replace("\"", "")
+//                .replace("}", "")
+//
+//            val emailUser = dadosUsuario.substringAfter("email\":")
+//                .substringBefore(",")
+//                .replace("\"", "")
+//            etEmail.setText(emailUser)
+//            Log.v("Email USer", emailUser)
+//
+//        }
+//    }
 
     val retrofitClient =
         RetrofitInitializer.getRetrofitInstance()

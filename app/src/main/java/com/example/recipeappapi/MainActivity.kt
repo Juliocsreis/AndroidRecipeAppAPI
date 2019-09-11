@@ -21,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+        buLogar.setOnClickListener {
+            var simples = "simples"
+            var intent= Intent(this@MainActivity,User_Token_Access::class.java)
+            intent.putExtra("simples", simples)
+            startActivity(intent)
+        }
+
+
     }
 
 
@@ -113,12 +122,18 @@ class MainActivity : AppCompatActivity() {
                     val meUser = response.body()!!.string()
                     Log.e("Token Gerado", meUser)
                     //{"email":"meAmo@gmail.com","name":"José"}
-                    var intent= Intent(this@MainActivity,User_Token_Access::class.java)
-                    intent.putExtra("dados",meUser)
-                    startActivityForResult(intent, REQUEST_CODE)
+
+                    var userName = meUser.substringAfter("name\":")
+                        .replace("\"", "")
+                        .replace("}", "")
+
+
+
+//                    startActivityForResult(intent, REQUEST_CODE)
+
                     Log.e("INTENT", meUser)
                     Log.e("INTENT2", intent.toString())
-                    Log.e("INTENT3", intent.getStringExtra("dados"))
+//                    Log.e("INTENT3", intent.getStringExtra("dados"))
 
             }else {
                     var res = response.code().toString()
